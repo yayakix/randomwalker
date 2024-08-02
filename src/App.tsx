@@ -2,10 +2,10 @@
 import './App.css'
 import Navbar from "./components/Navbar";
 import Walker from './components/Walker';
-import usePageStore, { PageTypes } from './stores/pageStore';
+import usePageStore, { PageTypes } from './stores/store';
 
 function App() {
-  const { page } = usePageStore();
+  const { page } = usePageStore() as { page: PageTypes };
   let content;
 
   switch (page) {

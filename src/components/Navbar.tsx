@@ -1,7 +1,7 @@
-import usePageStore, { PageTypes } from '../stores/pageStore';
+import usePageStore, { PageTypes } from '../stores/store';
 
 const Navbar = () => {
-    const { updatePage } = usePageStore();
+    const { updatePage } = usePageStore() as { updatePage: (page: PageTypes) => void };
 
     return <header>
         <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 ">
