@@ -7,16 +7,16 @@ export enum PageTypes {
 export type PageStore = {
   page: number;
   // prevPage: string;
-  // updatePage: (newPage: string) => void;
+  updatePage: (newPage: PageTypes) => void;
 };
 
 const usePageStore = create((set) => ({
   page: PageTypes.HOME,
   // prevPage: "",
-  updatePage: (newPage) =>
-    set((state) => ({
+  updatePage: (newPage: PageTypes) =>
+    set({
       page: newPage,
-    })),
+    }),
 }));
 
 export default usePageStore;

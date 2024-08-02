@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 const Walker = () => {
     const [walking, setWalking] = useState(false);
-    const [colors, setColors] = useState([255, 255, 203]);
-    console.log(colors);
-    const [r, setR] = useState(255);
-    const [g, setG] = useState(255);
-    const [b, setB] = useState(203);
+    // const [colors, setColors] = useState([255, 255, 203]);
+    // console.log(colors);
+    // const [r, setR] = useState(255);
+    // const [g, setG] = useState(255);
+    // const [b, setB] = useState(203);
     const toggleWalk = () => {
         setWalking(!walking);
     }

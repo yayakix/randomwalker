@@ -2,7 +2,6 @@
 import './App.css'
 import Navbar from "./components/Navbar";
 import Walker from './components/Walker';
-import { useState } from 'react';
 import usePageStore, { PageTypes } from './stores/pageStore';
 
 function App() {
