@@ -3,8 +3,6 @@ import { useState } from 'react';
 
 const CANVAS_SIZE_X = 600;
 const CANVAS_SIZE_Y = 600;
-const MID_X = CANVAS_SIZE_X / 2;
-const MID_Y = CANVAS_SIZE_Y / 2;
 
 const Walker = () => {
     const [walking, setWalking] = useState(false);

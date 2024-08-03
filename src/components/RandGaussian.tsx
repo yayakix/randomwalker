@@ -5,7 +5,6 @@ const RandGaussian = () => {
     const [drawing, setDrawing] = useState(true);
 
     const sketch: Sketch = (p5: P5CanvasInstance) => {
-        let x = p5.randomGaussian(320, 60)
         let y = 200
         p5.setup = () => {
             p5.createCanvas(400, 400)
@@ -51,10 +50,6 @@ const RandGaussian = () => {
         }
 
     }
-
-
-
-
 
     return <>
         <button onClick={() => setDrawing(!drawing)}>Toggle Drawing</button>
