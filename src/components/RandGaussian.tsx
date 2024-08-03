@@ -26,7 +26,6 @@ const RandGaussian = () => {
     }
 
     const sketch2: Sketch = (p5: P5CanvasInstance) => {
-        let x = p5.randomGaussian(320, 60)
         let y = 200
         p5.setup = () => {
             p5.createCanvas(400, 400)
