@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from "./components/Navbar";
 import Walker from './components/Walker';
 import usePageStore, { PageTypes } from './stores/store';
+import RandGaussian from './components/RandGaussian';
 
 function App() {
   const { page } = usePageStore() as { page: PageTypes };
@@ -10,11 +11,13 @@ function App() {
 
   switch (page) {
     case PageTypes.HOME:
-      content = <Walker />
+      content = <RandGaussian />
       break;
     case PageTypes.RANDOM_WALKER:
       content = <Walker />
-
+      break;
+    case PageTypes.RANDOM_GAUSSIAN:
+      content = <RandGaussian />
       break;
     // Add more cases as needed
     default:
@@ -24,8 +27,14 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      {content}
+      <div className='flex flex-row w-full h-full justify-start items-center'>
+        <div className=''>
+          <Navbar />
+        </div>
+        <div className=''>
+          {content}
+        </div>
+      </div>
     </>
   )
 }
