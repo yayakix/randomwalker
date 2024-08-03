@@ -15,8 +15,8 @@ const Walker = () => {
     const sketch: Sketch = (p5) => {
         let x: number, y: number;
         let prevX: number, prevY: number;
-        let step = p5.random(2, 4);
         let currentColor: number;
+        let step: number;
 
         p5.setup = () => {
             p5.createCanvas(400, 400);
@@ -33,13 +33,28 @@ const Walker = () => {
             if (walking) {
                 prevX = x;
                 prevY = y;
+                const random_choices = [1, 2, 3, 4]
+                console.log(p5.mouseX, p5.mouseY);
+                if (p5.mouseX > 200) {
+                    random_choices.push(1)
+                }
+                if (p5.mouseX < 200) {
+                    random_choices.push(2)
+                }
+                if (p5.mouseY > 200) {
+                    random_choices.push(3)
+                }
+                if (p5.mouseY < 200) {
+                    random_choices.push(4)
+                }
 
-                const choice = p5.random(4);
-                if (choice < 1) {
+                const choice = p5.random(random_choices);
+                if (choice === 1) {
                     x += step; // move right
-                } else if (choice < 2) {
+
+                } else if (choice === 2) {
                     x -= step; // move left
-                } else if (choice < 3) {
+                } else if (choice === 3) {
                     y += step; // move down
                 } else {
                     y -= step; // move up
