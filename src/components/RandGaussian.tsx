@@ -31,7 +31,7 @@ const RandGaussian = () => {
         let y = 200
         p5.setup = () => {
             p5.createCanvas(400, 400)
-            p5.background(255)
+            p5.background(0)
             p5.frameRate(10)
             p5.noStroke()
         }

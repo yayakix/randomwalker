@@ -20,6 +20,9 @@ const Navbar = () => {
                 <button onClick={() => updatePage(PageTypes.RANDOM_GAUSSIAN)}>
                     <span className="self-center text-xl font-semibold whitespace-nowrap ">RANDOM GAUSSIAN</span>
                 </button>
+                <button onClick={() => updatePage(PageTypes.ACCEPT_REJECT_DISTRIBUTION)}>
+                    <span className="self-center text-xl font-semibold whitespace-nowrap ">ACCEPT REJECT DISTRIBUTION</span>
+                </button>
             </div>
         </nav>
     </header>

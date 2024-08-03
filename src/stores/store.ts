@@ -4,6 +4,7 @@ export enum PageTypes {
   HOME = "HOME",
   RANDOM_WALKER = "RANDOM_WALKER",
   RANDOM_GAUSSIAN = "RANDOM_GAUSSIAN",
+  ACCEPT_REJECT_DISTRIBUTION = "ACCEPT_REJECT_DISTRIBUTION",
 }
 export type PageStore = {
   page: number;

@@ -34,25 +34,29 @@ const Walker = () => {
         }
 
         p5.draw = () => {
-            step = p5.random(10, 20);
             if (walking) {
                 prevX = x;
                 prevY = y;
                 const random_choices = [1, 2, 3, 4]
-                if (p5.mouseX > MID_X) {
-                    random_choices.push(1)
-                }
-                if (p5.mouseX < MID_X) {
-                    random_choices.push(2)
-                }
-                if (p5.mouseY > MID_Y) {
-                    random_choices.push(3)
-                }
-                if (p5.mouseY < MID_Y) {
-                    random_choices.push(4)
-                }
+                // if (p5.mouseX > MID_X) {
+                //     random_choices.push(1)
+                // }
+                // if (p5.mouseX < MID_X) {
+                //     random_choices.push(2)
+                // }
+                // if (p5.mouseY > MID_Y) {
+                //     random_choices.push(3)
+                // }
+                // if (p5.mouseY < MID_Y) {
+                //     random_choices.push(4)
+                // }
 
                 const choice = p5.random(random_choices);
+                step = p5.random(1)
+                if (step < 0.01) {
+                    step = 100
+                } else (step = 5)
+
                 if (choice === 1) {
                     x += step; // move right
 
