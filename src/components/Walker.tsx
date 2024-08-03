@@ -1,6 +1,11 @@
 import { ReactP5Wrapper, Sketch } from "@p5-wrapper/react";
 import { useState } from 'react';
 
+const CANVAS_SIZE_X = 600;
+const CANVAS_SIZE_Y = 600;
+const MID_X = CANVAS_SIZE_X / 2;
+const MID_Y = CANVAS_SIZE_Y / 2;
+
 const Walker = () => {
     const [walking, setWalking] = useState(false);
     // const [colors, setColors] = useState([255, 255, 203]);
@@ -19,7 +24,7 @@ const Walker = () => {
         let step: number;
 
         p5.setup = () => {
-            p5.createCanvas(400, 400);
+            p5.createCanvas(CANVAS_SIZE_X, CANVAS_SIZE_Y);
             p5.background(255);
             x = p5.width / 2;
             y = p5.height / 2;
@@ -34,17 +39,16 @@ const Walker = () => {
                 prevX = x;
                 prevY = y;
                 const random_choices = [1, 2, 3, 4]
-                console.log(p5.mouseX, p5.mouseY);
-                if (p5.mouseX > 200) {
+                if (p5.mouseX > MID_X) {
                     random_choices.push(1)
                 }
-                if (p5.mouseX < 200) {
+                if (p5.mouseX < MID_X) {
                     random_choices.push(2)
                 }
-                if (p5.mouseY > 200) {
+                if (p5.mouseY > MID_Y) {
                     random_choices.push(3)
                 }
-                if (p5.mouseY < 200) {
+                if (p5.mouseY < MID_Y) {
                     random_choices.push(4)
                 }
 
@@ -75,15 +79,10 @@ const Walker = () => {
     }
     return (
         <>
-            <button onClick={toggleWalk}>{walking ? 'Stop' : 'Start'}</button>
-            <ReactP5Wrapper sketch={sketch} />
-            {/* <label>R</label>
-            <input type="number" min={0} name="r" max={255} value={r} onChange={(e) => setR(parseInt(e.target.value))} />
-            <label>G</label>
-            <input type="number" min={0} name="g" max={255} value={g} onChange={(e) => setG(parseInt(e.target.value))} />
-            <label>B</label>
-            <input type="number" min={0} name="b" max={255} value={b} onChange={(e) => setB(parseInt(e.target.value))} />
-            <button onClick={() => setColors([r, g, b])}>Set</button> */}
+            <div className='flex flex-col'>
+                <button className='bg-white text-black p-2 w-24 border-2 border-black rounded-md mb-4 underline' onClick={toggleWalk}>{walking ? 'Stop' : 'Start'}</button>
+                <ReactP5Wrapper sketch={sketch} />
+            </div>
         </>
     )
 }
